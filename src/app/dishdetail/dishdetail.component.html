@@ -4,11 +4,10 @@
     fxLayout.xs="column"
     fxLayoutAlign.gt-md="space-around center"
     fxLayoutGap="10px" 
-    fxLayoutGap.xs="0"
-    *ngIf="dish">
+    fxLayoutGap.xs="0">
 
-  <div fxFlex="40">
-    <mat-card>
+  <div fxFlex="40" *ngIf="dish">
+    <mat-card >
       <mat-card-header>
         <mat-card-title>
           <h3>{{dish.name | uppercase}}</h3>
@@ -26,7 +25,7 @@
     </mat-card>
   </div>
 
-  <div fxFlex="40">
+  <div fxFlex="40" *ngIf="dish">
         <h3 matLine>Comments</h3>
       <mat-list>
         <mat-list-item *ngFor="let singleComment of dish.comments">
@@ -39,9 +38,7 @@
           </p>
         </mat-list-item>
       </mat-list>
-    
   </div>
-
 </div>
 
 
